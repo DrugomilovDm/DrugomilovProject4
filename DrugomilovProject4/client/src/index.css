@@ -1,0 +1,21 @@
+.rootStyle{
+    background-color: rgb(48, 64, 64);
+    height: 100vh;
+}
+.cardStyle{
+    background-color: rgb(4,32,44) !important;
+    /*background-color: rgb(48, 64, 64) !important;*/
+}
+.buttonStyle{
+    background-color: rgb(91,112,101) !important;
+    border-color: rgb(201,209,200)!important;
+}
+.placeholderStyle{
+    background-color:rgb(201,209,200) !important;
+}
+.textStyle1{
+    color:rgb(4,32,44) !important ;
+}
+.textStyle2{
+    color:rgb(201,209,200) !important;
+}
