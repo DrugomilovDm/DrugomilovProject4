@@ -1,5 +1,5 @@
 {
-  "port":5000,
-  "host":"remotemysql.com",
+  "port":80,
+  "host":"https://pacific-earth-05163.herokuapp.com/",
   "jwtSecret": "drugomilov pr 4"
 }

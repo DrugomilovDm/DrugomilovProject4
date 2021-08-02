@@ -6,6 +6,7 @@ export const useAuth = () => {
     const [token, setToken] = useState(null)
     const [userId, setUserId] = useState(null)
     const [alert, setAlert] = useState('')
+    const [users, setUsers] = useState({});
 
     const clearAlert = () => setAlert('')
 
@@ -29,5 +30,5 @@ export const useAuth = () => {
         }
     }, [login])
 
-    return { alert, setAlert, clearAlert, login, logout, token, userId }
+    return { alert, setAlert, clearAlert, users, setUsers, login, logout, token, userId }
 }

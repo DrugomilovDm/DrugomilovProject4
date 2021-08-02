@@ -27,7 +27,7 @@
       "react-app/jest"
     ]
   },
-  "proxy": "http://localhost:5000",
+  "proxy": "https://pacific-earth-05163.herokuapp.com/",
   "browserslist": {
     "production": [
       ">0.2%",

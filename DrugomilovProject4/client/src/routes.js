@@ -1,12 +1,13 @@
 import React from 'react'
-import {Switch,Route,Redirect}from 'react-router-dom'
-import {TablePage} from "./pages/TablePage";
-import {AuthPage} from "./pages/AuthPage";
-export const useRoutes =isAuthenticated=>{
-    if(isAuthenticated){
-        return(
+import { Switch, Route, Redirect } from 'react-router-dom'
+import { TablePage } from "./pages/TablePage";
+import { AuthPage } from "./pages/AuthPage";
+import {RegPage} from "./pages/RegPage";
+export const useRoutes = isAuthenticated => {
+    if (isAuthenticated) {
+        return (
             <Switch>
-                <Route path ="/Table" exact>
+                <Route path="/Table" exact>
                     <TablePage />
                 </Route>
                 <Redirect to="/Table" />
@@ -16,9 +17,12 @@ export const useRoutes =isAuthenticated=>{
     return (
         <Switch>
             <Route path="/" exact>
-                <AuthPage/>
+                <AuthPage />
             </Route>
-            <Redirect to="/"/>
+            <Route path="/Reg" exact>
+                <RegPage />
+            </Route>
+            <Redirect to="/" />
         </Switch>
     )
 }

@@ -1,18 +1,19 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, {useCallback, useEffect, useContext, useState} from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'react-bootstrap'
 import { Table } from "react-bootstrap";
 import { Navbar } from "../components/Navbar";
 import { useHttp } from "../hooks/http.hook";
+import { AuthContext } from "../context/AuthContext";
+import {Alert} from "../components/Alert";
 
 export const TablePage = () => {
     const { request } = useHttp()
-    const [users, setUsers] = useState({});
+    const { users, setUsers } = useContext(AuthContext)
     const fetchUsers = useCallback(async () => {
         const data = await request('/api/users/', 'GET', null);
 
         const newUsers = data.reduce((result, user) => ({ ...result, [user.id]: { ...user, checked: false } }), {});
-        console.log(newUsers);
         setUsers(newUsers);
     }, [request]);
 
@@ -24,8 +25,6 @@ export const TablePage = () => {
     }
 
     const checkAllHandler = (event) => {
-        console.log('checkedAll', event.target.checked)
-
         setUsers(checkUsers(event.target.checked));
     }
 
@@ -35,7 +34,7 @@ export const TablePage = () => {
         fetchUsers()
     }, [fetchUsers])
 
-    return (
+    return (<>
         <div>
             <Navbar />
             <Table className="textStyle2">
@@ -73,5 +72,6 @@ export const TablePage = () => {
                 </tbody>
             </Table>
         </div>
+        </>
     )
 }
